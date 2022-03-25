@@ -1,20 +1,16 @@
-# commit
+from src.jobs import read
+
+
 def get_unique_job_types(path):
-    """Checks all different job types and returns a list of them
+    data = read(path)
+    unique_job_types = set()
+    for row in data:
+        unique_job_types.add(row["job_type"])
+    return list(unique_job_types)
 
-    Must call `read`
-
-    Parameters
-    ----------
-    path : str
-        Must be passed to `read`
-
-    Returns
-    -------
-    list
-        List of unique job types
-    """
-    return []
+# Foi utilizado a seguinte fonte para compreender 
+# o fluxo de iteração do python
+# https://www.youtube.com/watch?v=AnJPtKLtc7o&ab_channel=HashtagPrograma%C3%A7%C3%A3o
 
 
 def filter_by_job_type(jobs, job_type):
