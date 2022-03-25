@@ -1,18 +1,15 @@
 from functools import lru_cache
+import csv
 
 
 @lru_cache
 def read(path):
-    """Reads a file from a given path and returns its contents
+    with open(path) as file:
+        data = csv.DictReader(file)
+        return list(data)
 
-    Parameters
-    ----------
-    path : str
-        Full path to file
 
-    Returns
-    -------
-    list
-        List of rows as dicts
-    """
-    return []
+# Foram utilizado as seguintes fontes para compreender
+# como converter o arquivo csv em um dicionario
+# https://python-forum.io/thread-9859.html
+# https://www.youtube.com/watch?v=5CEsJkKhS78&ab_channel=KrisJordan
