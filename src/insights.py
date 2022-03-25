@@ -8,7 +8,7 @@ def get_unique_job_types(path):
         unique_job_types.add(row["job_type"])
     return list(unique_job_types)
 
-# Foi utilizado a seguinte fonte para compreender 
+# Foi utilizado a seguinte fonte para compreender
 # o fluxo de iteração do python
 # https://www.youtube.com/watch?v=AnJPtKLtc7o&ab_channel=HashtagPrograma%C3%A7%C3%A3o
 
