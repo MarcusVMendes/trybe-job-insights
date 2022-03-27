@@ -80,18 +80,13 @@ def matches_salary_range(job, salary):
 
 
 def filter_by_salary_range(jobs, salary):
-    """Filters a list of jobs by salary range
+    job_list = list()
+    try:
+        for job in jobs:
+            if job["min_salary"] <= salary <= job["max_salary"]:
+                job_list.append(job)
+    except (TypeError):
+        print(TypeError)
+    return job_list
 
-    Parameters
-    ----------
-    jobs : list
-        The jobs to be filtered
-    salary : int
-        The salary to be used as filter
-
-    Returns
-    -------
-    list
-        Jobs whose salary range contains `salary`
-    """
-    return []
+# TypeError: "<=" not supported between instances of "int" and "NoneType"
